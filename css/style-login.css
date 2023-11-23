@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Amatic; /* Гарнитура шрифта */
+    src: url(../fonts/AmaticSC-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+* {
+    font-family: Amatic;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    background-image: url(../img/tree.jpg);
+    background-size: cover;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 10% auto;
+    background-color: white;
+    padding: 20px 30px;
+    font-size: 20px;
+}
+h1 {
+    text-align: center;
+}
+input {
+    font-size: 20px;
+}
+input, textarea, select, .radio__block {
+    margin-bottom: 10px;
+}
+input, textarea, select:focus {
+    outline: none !important;
+}
+textarea {
+    resize: none;
+}

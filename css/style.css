@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: Amatic; /* Гарнитура шрифта */
-    src: url(fonts/AmaticSC-Regular.ttf); /* Путь к файлу со шрифтом */
+    src: url(../fonts/AmaticSC-Regular.ttf); /* Путь к файлу со шрифтом */
 }
 * {
     font-family: Amatic;

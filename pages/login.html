@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style-login.css">
+    <title>Формы</title>
+</head>
+<body>
+    <form action="https://httpbin.org/post" method="post">
+        <h1>Форма обратной связи</h1>
+        ФИО
+        <input name="fio" type="text" required>
+        Email
+        <input name="Email" type="text" required>
+        Откуда узнали о нас?
+        <div class="radio__block">
+            <input name = "r1" id="radio1" type="radio" value="1">
+            <label for="radio1">Реклама</label><br>
+            <input name = "r1" id="radio2" type="radio" value="2">
+            <label for="radio2">Знакомые</label><br>
+            <input name = "r1" id="radio3" type="radio" value="3">
+            <label for="radio3">Социальные сети</label><br>
+            <input name = "r1" id="radio4" type="radio" value="4">
+            <label for="radio4">Интернет</label><br>
+        </div>
+        
+        Тип обращения
+        <select name="type" id="" required>
+            <option value="1">Жалоба</option>
+            <option value="2">Предложение</option>
+        </select>
+        Текст сообщения
+        <textarea name="text" id="" cols="30" rows="10" required></textarea>
+        Вложения
+        <input type="file" name="file" id="" required>
+        <div>
+            Даю согламие на обработку персональных данных 
+            <input type="checkbox" name="approval" id="" value="yes" required>
+        </div>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <form action="https://httpbin.org/post" method="post">
+        <h1>Форма аутентификации</h1>
+        Email
+        <input name="Email" type="text" required>
+        Пароль
+        <input name="password" type="password" required>
+        <div>
+            Запомнить меня
+            <input name="remember" type="checkbox" name="" value="yes" id="">
+        </div>
+        <input type="submit" value="Войти">
+        
+    </form>
+    
+
+    
+</body>
+</html>
