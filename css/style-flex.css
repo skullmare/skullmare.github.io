@@ -110,6 +110,7 @@ footer {
 .video {
     flex: 1;
     margin: 10px;
+    cursor: pointer;
 }
 .video img {
     width: 100%;
