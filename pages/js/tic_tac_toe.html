@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 		table {
 			margin: 0px auto;
 		}
+
 		#field td {
 			width: 100px;
 			height: 100px;
@@ -16,9 +18,11 @@
 			font-size: 60px;
 			font-weight: 900;
 		}
+
 		.result {
 			text-align: center;
 		}
+
 		.reset {
 			text-align: center;
 			margin: 0px auto;
@@ -31,81 +35,82 @@
 	<script>
 		let num = 0;
 		let combs = [
-			[1,2,3],[4,5,6],[7,8,9],
-			[1,4,7],[2,5,8],[3,6,9],
-			[1,5,9],[3,5,7]
+			[1, 2, 3], [4, 5, 6], [7, 8, 9],
+			[1, 4, 7], [2, 5, 8], [3, 6, 9],
+			[1, 5, 9], [3, 5, 7]
 		]
 		let massO = []
 		let winO = 0;
 		let massX = []
 		let winX = 0;
 		function func(id) {
-				let elem = document.getElementById(id);
-				if (num % 2 == 0 && elem.innerText == 0 && winO == 0 && winX == 0) {
-						elem.textContent = "⭕"
-						num += 1;
-						massO.push(id)
-						massO.sort(function (a, b) {
-							return a - b;
-						})
-						if (massO.length >= 3) {
-							for (let i = 0; i < 8; i++) {
-								let check = 0
-								for (let j = 0; j < 3; j++) {
-									for (let a = 0; a < massO.length; a++) {
-										if (combs[i][j] == massO[a]) {
-											check ++;
-											if (check == 3) {
-												winO++;
-											}
-										}
+			let elem = document.getElementById(id);
+			if (num % 2 == 0 && elem.innerText == 0 && winO == 0 && winX == 0) {
+				elem.textContent = "⭕"
+				num += 1;
+				massO.push(id)
+				massO.sort(function (a, b) {
+					return a - b;
+				})
+				if (massO.length >= 3) {
+					for (let i = 0; i < 8; i++) {
+						let check = 0
+						for (let j = 0; j < 3; j++) {
+							for (let a = 0; a < massO.length; a++) {
+								if (combs[i][j] == massO[a]) {
+									check++;
+									if (check == 3) {
+										winO++;
 									}
 								}
-
 							}
 						}
-						
+
+					}
 				}
-				else if (elem.innerText == 0 && winO == 0 && winX == 0){
-						elem.textContent = "✖"
-						num += 1;
-						massX.push(id)
-						massX.sort(function (a, b) {
-							return a - b;
-						})
-						if (massX.length >= 3) {
-							for (let i = 0; i < 8; i++) {
-								let check = 0
-								for (let j = 0; j < 3; j++) {
-									for (let a = 0; a < massX.length; a++) {
-										if (combs[i][j] == massX[a]) {
-											check ++;
-											if (check == 3) {
-												winX++;
-											}
-										}
+
+			}
+			else if (elem.innerText == 0 && winO == 0 && winX == 0) {
+				elem.textContent = "✖"
+				num += 1;
+				massX.push(id)
+				massX.sort(function (a, b) {
+					return a - b;
+				})
+				if (massX.length >= 3) {
+					for (let i = 0; i < 8; i++) {
+						let check = 0
+						for (let j = 0; j < 3; j++) {
+							for (let a = 0; a < massX.length; a++) {
+								if (combs[i][j] == massX[a]) {
+									check++;
+									if (check == 3) {
+										winX++;
 									}
 								}
-
 							}
 						}
+
+					}
 				}
-				let result = document.querySelector('.result');
-				if (winO == 1) {
-					result.textContent = 'Победили нолики!'
-				}
-				else if (winX == 1) {
-					result.textContent = 'Победили крестики!'
-				}
-				else if (massO.length + massX.length == 9) {
-					result.textContent = 'Ничья!'
-				}
+			}
+			let result = document.querySelector('.result');
+			if (winO >= 1) {
+				result.textContent = 'Победили нолики!'
+			}
+			else if (winX >= 1) {
+				result.textContent = 'Победили крестики!'
+			}
+			else if (massO.length + massX.length == 9) {
+				result.textContent = 'Ничья!'
+			}
 		};
-		function reset(){
+		function reset() {
 			location.reload()
 		}
 	</script>
 </head>
+
 <body>
 	<table id="field">
 		<tr>
@@ -127,4 +132,5 @@
 	<div class="reset" onclick="reset()">Начать заново</div>
 	<div class="result"></div>
 </body>
+
 </html>
