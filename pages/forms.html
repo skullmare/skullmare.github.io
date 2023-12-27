@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="https://httpbin.org/post" method="post">
+    <form action="https://httpbin.org/post" enctype="multipart/form-data" action="__URL__" method="post">
         <h1>Форма обратной связи</h1>
         ФИО
         <input name="fio" type="text" required>
@@ -35,6 +35,7 @@
         Текст сообщения
         <textarea name="text" id="" cols="30" rows="10" required></textarea>
         Вложения
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
         <input type="file" name="file" id="" required>
         <div>
             Даю согламие на обработку персональных данных
