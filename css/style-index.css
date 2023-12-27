@@ -5,9 +5,12 @@
 } */
 
 @font-face {
-    font-family: Amatic; /* Гарнитура шрифта */
-    src: url(../fonts/AmaticSC-Regular.ttf); /* Путь к файлу со шрифтом */
+    font-family: Amatic;
+    /* Гарнитура шрифта */
+    src: url(../fonts/AmaticSC-Regular.ttf);
+    /* Путь к файлу со шрифтом */
 }
+
 * {
     font-family: Amatic;
     margin: 0px;
@@ -18,20 +21,25 @@
     margin: 0px auto;
     width: 90%;
 }
+
 .info__block table {
     margin: 0px auto;
 }
+
 .info__block table tr td img {
     height: 400px;
-} 
+}
+
 .info__block table tr td {
     max-width: 300px;
     overflow: hidden;
 }
+
 header {
     padding-right: 10%;
     height: 100px;
 }
+
 header nav {
     float: right;
     padding: 10px 5px;
@@ -48,11 +56,13 @@ a {
     color: black;
     text-decoration: none;
 }
+
 footer {
     text-align: center;
     background-color: rgb(216, 216, 216);
-    
+
 }
+
 .contact {
     padding: 10px;
     font-size: 20px;
