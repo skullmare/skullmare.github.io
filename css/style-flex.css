@@ -74,7 +74,11 @@ header nav:hover {
 .container .card img {
     width: 200px;
 }
-
+.hidden-block {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
 .container .card .title {
     font-size: 20px;
     font-weight: 900;
