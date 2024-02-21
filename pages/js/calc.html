@@ -56,16 +56,7 @@
     width: 53px;
 
 }
-/* .digits{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    
-}
-.key-digit{
-    height: 20px;
-    width: 20px;
-} */ 
+
 </style>
 
 <body>
@@ -147,56 +138,6 @@
         </div>
     </main>
     <script>
-// let a = '';
-// let b = '';
-// let sign = '';
-// let finish = false;
-
-// const digit = ['0','1','2','3','4','5','6','7','8','9','.'];
-// const action = ['-','+','*','/'];
-
-// const out = document.querySelector('.screen p');
-
-// function clearAll(){
-//     a = '';
-//     b = '';
-//     sign = '';
-//     finish = false;
-//     out.textContent = 0;
-// }
-// document.querySelector('.clear').onclick = clearAll;
-
-// document.querySelector('.buttons').onclick = (event) =>{
-//     if(!event.target.classList.contains('key')) return;
-//     if(event.target.classList.contains('clear')) return;
-
-//     out.textContent='';
-
-//     const btn = event.target.textContent;
-
-//     if (digit.includes(btn)){
-//         if(b==='' && sign===''){
-//             a+=btn;
-//             console.log(a, b, sign);
-//             out.textContent=a;
-//         }
-//         else if(a!=='' && b!=='' && finish){
-
-//         }
-//         else{
-//             b+=btn;
-//             out.textContent=a;
-//         }
-//         console.log(a,b,sign);
-//         return;
-//     }
-//     if (action.includes(btn)){
-//         a=btn;
-//         console.log(a,b,sign);
-//         out.textContent=a;
-//         return;
-//     }
-// }
 
 function isNumeric(str) {
     return /^\d+(\.\d+)?$/.test(str);
