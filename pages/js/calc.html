@@ -8,124 +8,308 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style>
-    .calculator {
-        width: 298px;
-        margin: 0 auto;
-        text-align: center;
-        -webkit-box-shadow: 0px 5px 10px 13px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 0px 5px 10px 13px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 5px 10px 13px rgba(34, 60, 80, 0.2);
-    }
 
-    .calculator table {
-        width: 100%;
-        margin-top: 10px;
-    }
+.calc-container{
+    margin: 0 auto;
+    height: 320px;
+    width: 300px;
+    border: 1px solid black;
+    
+    
+} 
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.screen{
+    width: 292px;
+    height: 80px;
+    margin-bottom: 2px;
+    
 
-    .calculator input[type="text"] {
-        width: 98%;
-        height: 40px;
-        font-size: 20px;
-        text-align: right;
-        border: none;
-        outline: none;
-        -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    }
+    
+}
+.digits{
+    margin-right: 10px;
+}
+.key-digit{
+    height: 53px;
+    width: 53px;
+}
+.key-operation{
+    height: 53px;
+    width: 53px;
 
-    .calculator button {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        margin: 5px;
-        border: none;
-        outline: none;
-        background-color: white;
-        -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    }
+}
+.key-bracket{
+    height: 53px;
+    width: 53px;
 
-    .calculator button:nth-child(4n + 4) {
-        background-color: orange;
-    }
+}
+.key-result{
+    height: 53px;
+    width: 53px;
+
+}
+.key{
+    height: 53px;
+    width: 53px;
+
+}
+/* .digits{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+.key-digit{
+    height: 20px;
+    width: 20px;
+} */ 
 </style>
 
 <body>
-    <div class="calculator">
-        <input type="text" id="result" readonly>
-        <table>
-            <tr>
-                <td><button onclick="clearResult()">C</button></td>
-                <td><button onclick="deleteLastEntry()">del</button></td>
-                <td><button onclick="appendToResult('/')">/</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendToResult('7')">7</button></td>
-                <td><button onclick="appendToResult('8')">8</button></td>
-                <td><button onclick="appendToResult('9')">9</button></td>
-                <td><button onclick="appendToResult('*')">*</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendToResult('4')">4</button></td>
-                <td><button onclick="appendToResult('5')">5</button></td>
-                <td><button onclick="appendToResult('6')">6</button></td>
-                <td><button onclick="appendToResult('-')">-</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendToResult('1')">1</button></td>
-                <td><button onclick="appendToResult('2')">2</button></td>
-                <td><button onclick="appendToResult('3')">3</button></td>
-                <td><button onclick="appendToResult('+')">+</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendToResult('0')">0</button></td>
-                <td><button onclick="appendToResult('.')">.</button></td>
-                <td><button onclick="calculateResult()">=</button></td>
-            </tr>
-        </table>
-    </div>
+    <main>
+        <div class="calc-container">
+            <div class="screen">
+                <p>0</p>
+            </div>
+            <div class="buttons">
+                <div class="digits">
+                    <table>
+                        <tr>
+                            <th><button class="key digit">7</button></th>
+                            <th><button class="key digit">8</button></th>
+                            <th><button class="key digit">9</button></th>
+                        </tr>
+                        <tr>
+                            <td><button class="key digit">4</button></td>
+                            <td><button class="key digit">5</button></td>
+                            <td><button class="key digit">6</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="key digit">1</button></td>
+                            <td><button class="key digit">2</button></td>
+                            <td><button class="key digit">3</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="key digit">0</button></td>
+                            <td> <button class="key digit">.</button></td>
+                            <td><button class="key" style="visibility: hidden;"></button></td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                <div class="other">
+                    <table>
+                        <tr>
+                            <th><button class="key operation">+</button></th>
+                            <th> <button class="key operation">-</button></th>
+                            
+                        </tr>
+                        <tr>
+                            <td><button class="key operation">*</button></td>
+                            <td><button class="key operation">/</button></td>
+                            
+                        </tr>
+                        <tr>
+                            <td> <button class="key bracket">(</button></td>
+                            <td><button class="key bracket">)</button></td>
+                           
+                        </tr>
+                        <tr>
+                            <td><button class="key result">=</button></td>
+                            <td> <button class="key clear">C</button></td>
+                            
+                        </tr>
+                    </table>
+                    
+                   
+                    
+                    
+                   
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </main>
     <script>
-        function appendToResult(value) {
-            document.getElementById("result").value += value;
-        }
+// let a = '';
+// let b = '';
+// let sign = '';
+// let finish = false;
 
-        function deleteLastEntry() {
-            let result = document.getElementById("result").value;
-            document.getElementById("result").value = result.slice(0, -1);
-        }
+// const digit = ['0','1','2','3','4','5','6','7','8','9','.'];
+// const action = ['-','+','*','/'];
 
-        function clearResult() {
-            document.getElementById("result").value = "";
-        }
+// const out = document.querySelector('.screen p');
 
-        function calculateResult() {
-            let result = document.getElementById("result").value;
-            let calculation = result.split(/[+\-*/]/);
-            let operators = result.replace(/[0-9.]/g, "").split("");
+// function clearAll(){
+//     a = '';
+//     b = '';
+//     sign = '';
+//     finish = false;
+//     out.textContent = 0;
+// }
+// document.querySelector('.clear').onclick = clearAll;
 
-            let total = Number(calculation[0]);
-            for (let i = 0; i < operators.length; i++) {
-                let number = Number(calculation[i + 1]);
-                switch (operators[i]) {
-                    case "+":
-                        total += number;
-                        break;
-                    case "-":
-                        total -= number;
-                        break;
-                    case "*":
-                        total *= number;
-                        break;
-                    case "/":
-                        total /= number;
-                        break;
-                }
+// document.querySelector('.buttons').onclick = (event) =>{
+//     if(!event.target.classList.contains('key')) return;
+//     if(event.target.classList.contains('clear')) return;
+
+//     out.textContent='';
+
+//     const btn = event.target.textContent;
+
+//     if (digit.includes(btn)){
+//         if(b==='' && sign===''){
+//             a+=btn;
+//             console.log(a, b, sign);
+//             out.textContent=a;
+//         }
+//         else if(a!=='' && b!=='' && finish){
+
+//         }
+//         else{
+//             b+=btn;
+//             out.textContent=a;
+//         }
+//         console.log(a,b,sign);
+//         return;
+//     }
+//     if (action.includes(btn)){
+//         a=btn;
+//         console.log(a,b,sign);
+//         out.textContent=a;
+//         return;
+//     }
+// }
+
+function isNumeric(str) {
+    return /^\d+(\.\d+)?$/.test(str);
+}
+
+function isDigit(str) {
+    return /^\d$/.test(str);
+}
+
+function isOperation(str) {
+    return /^[+\-*/]$/.test(str);
+}
+
+function tokenize(str) {
+    let tokens = [];
+    let lastNumber = '';
+    for (char of str) {
+        if (isDigit(char) || char == '.') {
+            lastNumber += char;
+        } else {
+            if(lastNumber.length > 0) {
+                tokens.push(lastNumber);
+                lastNumber = '';
             }
+        } 
+        if (isOperation(char) || char == '(' || char == ')') {
+            tokens.push(char);
+        } 
+    }
+    if (lastNumber.length > 0) {
+        tokens.push(lastNumber);
+    }
+    return tokens;
+}
 
-            document.getElementById("result").value = total;
+function priority(op) {
+    if (op == '+' || op == '-') {
+        return 1;
+    } else if (op == '*' || op == '/') {
+        return 2;
+    } else {
+        return 0;
+    }
+}
+
+function compile(str) {
+    let out = [];
+    let stack = [];
+    for (token of tokenize(str)) {
+        if (isNumeric(token)) {
+            out.push(token);
+        } else if (isOperation(token)) {
+            while (stack.length > 0 && isOperation(stack[stack.length - 1]) && priority(stack[stack.length - 1]) >= priority(token)) {
+                out.push(stack.pop());
+            }
+            stack.push(token);
+        } else if (token == '(') {
+            stack.push(token);
+        } else if (token == ')') {
+            while (stack.length > 0 && stack[stack.length-1] != '(') {
+                out.push(stack.pop());
+            }
+            stack.pop();
         }
+    }
+    while (stack.length > 0) {
+        out.push(stack.pop());
+    }
+    return out.join(' ');
+}
+
+function evaluate(str) {
+    let stack = [];
+    let tokens = str.split(' ');
+    for (token of tokens) {
+        if (isNumeric(token)) {
+            stack.push(parseFloat(token));
+        } else if (isOperation(token)) {
+            let operand2 = stack.pop();
+            let operand1 = stack.pop();
+            if (token == '+') {
+                stack.push(operand1 + operand2);
+            } else if (token == '-') {
+                stack.push(operand1 - operand2);
+            } else if (token == '*') {
+                stack.push(operand1 * operand2);
+            } else if (token == '/') {
+                stack.push(operand1 / operand2);
+            }
+        }
+    }
+    return stack.pop();
+}
+
+function clickHandler(event) {
+    let screen = document.querySelector('.screen p');
+    let target = event.target;
+    let value = target.textContent;
+
+    if (target.classList.contains('digit') || target.classList.contains('operation') || target.classList.contains('bracket')) {
+        screen.textContent += value;
+    } else if (target.classList.contains('clear')) {
+        screen.textContent = '';
+    } else if (target.classList.contains('result')) {
+        let result = evaluate(compile(screen.textContent));
+        screen.textContent = result.toFixed(2);
+    }
+}
+
+window.onload = function () {
+    let calculator = document.querySelector('.buttons');
+    calculator.addEventListener('click', clickHandler);
+}
     </script>
 </body>
 
