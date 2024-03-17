@@ -115,6 +115,7 @@ function loadDataAutocomplete() {
 // заполнение инпута по нажатию на выпадающий список
 document.querySelector('.section').addEventListener('click', fill)
 function fill(event) {
+    console.log(event)
     let text = event.target.textContent;
     let input = document.querySelector('input')
     input.value = text
